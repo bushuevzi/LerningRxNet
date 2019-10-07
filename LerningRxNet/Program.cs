@@ -6,7 +6,13 @@ namespace LerningRxNet
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            // Инициируем Издаделя
+            var numbers = new NumbersObservable(5);
+            // Создаем Подписчика
+            //var subscription = numbers.Subscribe(new ConsoleObserver<int>("numbers"));
+            
+            // Или с помощью нашего расширяющиего метода
+            var subscription = numbers.SubscribeConsole("newNumbers");
         }
     }
 }
